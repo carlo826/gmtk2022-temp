@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: f3364528c754c27438aeb9622535ce13
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Chewie DEMO
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a6a8d23fe2a22a84d873649d44a86e8e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
