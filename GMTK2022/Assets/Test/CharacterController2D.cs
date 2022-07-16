@@ -11,6 +11,7 @@ public class CharacterController2D : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private Animator animator;
+    private GameObject dice;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,40 @@ public class CharacterController2D : MonoBehaviour
         if (Input.GetKey(KeyCode.S))
             rb.AddForce(Vector2.down * speed);
         rb.velocity -= friction*rb.velocity;
-        animator.SetFloat(speed,Mathf.Abs(Input.GetAxisRaw("Horizontal")));
+        //animator.SetFloat(speed,Mathf.Abs(Input.GetAxisRaw("Horizontal")));
+ 
+    }
+
+    public void checkDice(int finalSide){
+         switch(finalSide){
+            case 1:
+              speedSlow();
+              break;
+            case 2:
+              //TODO
+              break;
+            case 3:
+              //TODO
+              break;
+            case 4:
+              //TODO
+              break;
+            case 5:
+              //TODO
+              break;
+            case 6:
+              speedBoost();
+              break;
+         }
+    }
+
+     void speedBoost(){
+        speed = speed * 2;
+        Debug.Log("speed is " + speed);
+    }
+
+    void speedSlow(){
+        speed = speed / 2;
+        Debug.Log("speed is " + speed);
     }
 }

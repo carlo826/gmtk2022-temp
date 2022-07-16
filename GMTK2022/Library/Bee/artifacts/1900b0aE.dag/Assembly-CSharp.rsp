@@ -373,6 +373,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/levelController.cs"
 "Assets/Test/CharacterController2D.cs"
+"Assets/Test/Dice.cs"
 "Assets/Test/LevelMove_Ref.cs"
 -langversion:9.0
 
