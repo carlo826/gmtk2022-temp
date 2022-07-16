@@ -23,6 +23,6 @@ public class enemyMovement : MonoBehaviour
     {
         playerPosition = player.GetComponent<Transform>().position;
         transform.position = Vector2.MoveTowards(transform.position, playerPosition, speed);
-        Debug.Log("position:" + playerPosition);
+        //Debug.Log("position:" + playerPosition);
     }
 }
