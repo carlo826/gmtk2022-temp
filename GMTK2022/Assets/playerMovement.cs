@@ -40,10 +40,10 @@ public class playerMovement : MonoBehaviour
               projectileSpeedSlow();
               break;
             case 3:
-              //TODO
+              attackSpeedSlow();
               break;
             case 4:
-              //TODO
+              attackSpeedBoost();
               break;
             case 5:
               projectileSpeedBoost();
@@ -74,5 +74,17 @@ public class playerMovement : MonoBehaviour
         GameObject player = GameObject.Find("PlayerCharacter");
         player.GetComponent<playerAttack>().speed = player.GetComponent<playerAttack>().speed / 2;
         Debug.Log("Attackspeed is now " + player.GetComponent<playerAttack>().speed);
+    }
+
+    void attackSpeedBoost(){
+        GameObject player = GameObject.Find("PlayerCharacter");
+        player.GetComponent<playerAttack>().attackDelay = player.GetComponent<playerAttack>().attackDelay / 2;
+        Debug.Log("Attackspeed is now " + player.GetComponent<playerAttack>().attackDelay);
+    }
+
+    void attackSpeedSlow(){
+        GameObject player = GameObject.Find("PlayerCharacter");
+        player.GetComponent<playerAttack>().attackDelay = player.GetComponent<playerAttack>().attackDelay * 2;
+        Debug.Log("Attackspeed is now " + player.GetComponent<playerAttack>().attackDelay);
     }
 }
