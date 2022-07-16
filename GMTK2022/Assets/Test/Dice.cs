@@ -62,7 +62,4 @@ public class Dice : MonoBehaviour {
         Debug.Log(finalSide);
     }
 
-    public int getFinalSide(){
-        return finalSide;
-    }
 }
