@@ -1587,9 +1587,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1715073545}
     m_Modifications:
+    - target: {fileID: 3059260469373533249, guid: 3da5ba877836ecb428fa0dcd11b65a59, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059260469373533249, guid: 3da5ba877836ecb428fa0dcd11b65a59, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3059260469775544410, guid: 3da5ba877836ecb428fa0dcd11b65a59, type: 3}
       propertyPath: m_Name
       value: OptionsMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059260469775544410, guid: 3da5ba877836ecb428fa0dcd11b65a59, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3059260469775544412, guid: 3da5ba877836ecb428fa0dcd11b65a59, type: 3}
       propertyPath: volumeSlider
@@ -1665,7 +1677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3059260469775544413, guid: 3da5ba877836ecb428fa0dcd11b65a59, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -89
       objectReference: {fileID: 0}
     - target: {fileID: 3059260469775544413, guid: 3da5ba877836ecb428fa0dcd11b65a59, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1687,6 +1699,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 499007147}
+    - target: {fileID: 3059260470235413654, guid: 3da5ba877836ecb428fa0dcd11b65a59, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059260470235413654, guid: 3da5ba877836ecb428fa0dcd11b65a59, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059260470235413654, guid: 3da5ba877836ecb428fa0dcd11b65a59, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3da5ba877836ecb428fa0dcd11b65a59, type: 3}
 --- !u!1001 &7091900596935022895
