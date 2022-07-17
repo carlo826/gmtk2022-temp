@@ -64,5 +64,5 @@ public class playerAttack : MonoBehaviour
         
         }
 
-
+}
     //Quaternion.Euler(new Vector2(0,0))
