@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class projectileController : MonoBehaviour
 {
+    public static float spawnTime = 30f;
+    private float currentTime = spawnTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,12 +24,12 @@ public class projectileController : MonoBehaviour
 
         if(other.gameObject.CompareTag("Enemy")){
             other.gameObject.GetComponent<enemyController>().health--;
-            Debug.Log(other.gameObject.GetComponent<enemyController>().health);
+            //Debug.Log(other.gameObject.GetComponent<enemyController>().health);
+            Destroy(gameObject);
         }
         else
         {
-            Debug.Log("NOT ENEMY");
+            //Debug.Log("NOT ENEMY");
         }
-        Destroy(gameObject);
     }
 }

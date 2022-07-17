@@ -5,18 +5,20 @@ using UnityEngine;
 public class spawnController : MonoBehaviour
 {
     public GameObject[] enemies;
-    public static float spawnTime = 3f;
+    public static float spawnTime = 8f;
     private float currentTime = spawnTime;
     private float width;
     private float height;
     private float spawnX;
     private float spawnY;
     private Vector2 spawnPoint;
+    private BoxCollider2D col;
 
     // Start is called before the first frame update
     void Start()
     {
-        width = gameObject.transform.localScale.x;
+        col = GetComponent<BoxCollider2D>();
+        width = col.bounds.max.x;
         height = gameObject.transform.localScale.y;
     }
 
@@ -25,25 +27,25 @@ public class spawnController : MonoBehaviour
     {
         // Top/Bottom (True) or left/right (False)
         if(Random.Range(0, 2) > 0.5f){
-            spawnX = Random.Range(0, width);
+            spawnX = Random.Range(col.bounds.min.x, col.bounds.max.x);
 
             // spawn on top (True) or bottom (False)
             if (Random.Range(0,2) > 0.5f) {
-                spawnY = 0;
+                spawnY = col.bounds.min.y;
             }
             else {
-                spawnY = height;
+                spawnY = col.bounds.max.y;
             }
         }
         else {
-            spawnY = Random.Range(0, height);
+            spawnY = Random.Range(col.bounds.min.y, col.bounds.max.y);
 
             // spawn on left(True) or right(False)
             if(Random.Range(0,2) > 0.5f){
-                spawnX = 0;
+                spawnX = col.bounds.min.x;
             }
             else{
-                spawnX = width; 
+                spawnX = col.bounds.max.x; 
             }
         }
 
@@ -55,7 +57,7 @@ public class spawnController : MonoBehaviour
         }
         else{
             Instantiate(enemies[0], spawnPoint, Quaternion.Euler(new Vector2(0,0)));
-            Debug.Log(spawnPoint);
+            //Debug.Log(spawnPoint);
             currentTime = spawnTime;
         }
     }
