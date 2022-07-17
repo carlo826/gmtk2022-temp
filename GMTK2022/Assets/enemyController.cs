@@ -16,6 +16,10 @@ public class enemyController : MonoBehaviour
     void Update()
     {
         if (health <= 0)
+        {
+            GetComponent<PlayDMG>().playSound();
             Destroy(gameObject);
+        }
+            
     }
 }

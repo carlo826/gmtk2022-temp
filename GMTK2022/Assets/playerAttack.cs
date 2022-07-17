@@ -32,8 +32,8 @@ public class playerAttack : MonoBehaviour
             if (Input.GetKey("mouse 0") && Time.time > nextDamageEvent ) {
                 nextDamageEvent = Time.time + attackDelay;
                 projectileInstance = Instantiate(projectile, transform.position, Quaternion.FromToRotation(aimDirection, transform.position)).GetComponent<Rigidbody2D>();
-
-            //AudioManager.GetComponent<AudioManager>().Play("fireShoot");
+                
+            
 
                 GetComponent<PlaySoundOnStart>().playSound();
                 Vector2 direction = new Vector2(aimDirection.x, aimDirection.y);

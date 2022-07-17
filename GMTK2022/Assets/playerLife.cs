@@ -24,9 +24,10 @@ public class playerLife : MonoBehaviour
      void OnCollisionEnter2D(Collision2D other){
         Debug.Log("Collision");
         Debug.Log(other.gameObject);
-        GetComponent<PlayDMG>().playSound();
+       
 
         if (other.gameObject.CompareTag("Enemy")){
+            GetComponent<PlayDMG>().playSound();
             isDead = true;
             Debug.Log("PLAYER DEAD");
             //Debug.Log(other.gameObject.GetComponent<enemyController>().health);
