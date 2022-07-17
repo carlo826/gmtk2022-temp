@@ -14,20 +14,12 @@ public class playerAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Vector2 aimDirection;
-        public float speed = 0.1f;
-        public float attackDelay = 0.5f;
-        private float nextDamageEvent = 0.0f;
-        public GameObject projectile;
-        private Rigidbody2D projectileInstance;
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
+        
 
         // Update is called once per frame
-        void Update()
+        
+    }
+    void Update()
         {
             aimDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             aimDirection = aimDirection - (Vector2)transform.position;
@@ -71,7 +63,6 @@ public class playerAttack : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("fireSwosh");
         
         }
-    }
 
 
     //Quaternion.Euler(new Vector2(0,0))
