@@ -25,7 +25,7 @@ public class playerAttack : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && Time.time > nextDamageEvent ) {
                 nextDamageEvent = Time.time + attackDelay;
-                projectileInstance = Instantiate(projectile, transform.position, Quaternion.Euler(new Vector2(0,0))).GetComponent<Rigidbody2D>();
+                projectileInstance = Instantiate(projectile, transform.position, Quaternion.FromToRotation(aimDirection, transform.position)).GetComponent<Rigidbody2D>();
             //projectileInstance.GetComponent<Rigidbody2D>();
             //Debug.Log("AIM DIRECTION X:" + aimDirection.x);
             //Debug.Log("AIM DIRECTION Y:" + aimDirection.y);
@@ -33,8 +33,11 @@ public class playerAttack : MonoBehaviour
                 Vector2 direction = new Vector2(aimDirection.x, aimDirection.y);
                 direction.Normalize();
                 projectileInstance.AddForce(direction*speed);
-        
+            Debug.Log(Quaternion.FromToRotation(aimDirection, transform.position));
         }
    
     }
 }
+
+
+//Quaternion.Euler(new Vector2(0,0))
