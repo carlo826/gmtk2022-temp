@@ -10,6 +10,8 @@ public class SettingsMenu : MonoBehaviour
 
     public TMPro.TMP_Dropdown resolutionDropdown;
 
+    public Slider volumeSlider;
+
     Resolution[] resolutions;
 
     void Start() {
@@ -32,6 +34,9 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+
+        volumeSlider.value = GetMasterLevel();
+
     }
 
     public void SetResolution (int resolutionIndex){
@@ -40,7 +45,6 @@ public class SettingsMenu : MonoBehaviour
     }
 
     public void SetVolume(float volume) {
-
         //masterVolume är namnet på den exposade parametern i unitys master mixer
         audioMixer.SetFloat("masterVolume", volume);
     }
@@ -52,5 +56,15 @@ public class SettingsMenu : MonoBehaviour
     public void SetFullscreen (bool isFullscreen) {
         Screen.fullScreen = isFullscreen;
     }
+
+    public float GetMasterLevel(){
+         float value;
+         bool result =  audioMixer.GetFloat("masterVolume", out value);
+         if(result){
+             return value;
+         }else{
+             return 0f;
+         }
+     }
 
 }
