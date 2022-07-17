@@ -10,6 +10,7 @@ public class playerAttack : MonoBehaviour
     private float nextDamageEvent = 0.0f;
     public GameObject projectile;
     private Rigidbody2D projectileInstance;
+    public GameObject AudioManager; 
     // Start is called before the first frame update
     void Start()
     {
@@ -30,9 +31,14 @@ public class playerAttack : MonoBehaviour
             //Debug.Log("AIM DIRECTION X:" + aimDirection.x);
             //Debug.Log("AIM DIRECTION Y:" + aimDirection.y);
 
+            //AudioManager.GetComponent<AudioManager>().Play("fireShoot");
+                
+
                 Vector2 direction = new Vector2(aimDirection.x, aimDirection.y);
                 direction.Normalize();
                 projectileInstance.AddForce(direction*speed);
+
+                FindObjectOfType<AudioManager>().Play("fireSwosh");
         
         }
    
