@@ -1,6 +1,7 @@
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
+    using UnityEngine.Audio;
 
 public class playerAttack : MonoBehaviour
 {
@@ -23,9 +24,9 @@ public class playerAttack : MonoBehaviour
         {
             aimDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             aimDirection = aimDirection - (Vector2)transform.position;
-            //Debug.Log(aimDirection);
+        //Debug.Log(aimDirection);
 
-            
+        
 
 
             if (Input.GetKey("mouse 0") && Time.time > nextDamageEvent ) {
@@ -33,8 +34,8 @@ public class playerAttack : MonoBehaviour
                 projectileInstance = Instantiate(projectile, transform.position, Quaternion.FromToRotation(aimDirection, transform.position)).GetComponent<Rigidbody2D>();
 
             //AudioManager.GetComponent<AudioManager>().Play("fireShoot");
-                
 
+                GetComponent<PlaySoundOnStart>().playSound();
                 Vector2 direction = new Vector2(aimDirection.x, aimDirection.y);
                 direction.Normalize();
                 projectileInstance.AddForce(direction*speed);
@@ -60,7 +61,9 @@ public class playerAttack : MonoBehaviour
         
         float AngleBetweenTwoPoints(Vector3 a, Vector3 b) {
                 return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
-                FindObjectOfType<AudioManager>().Play("fireSwosh");
+        //FindObjectOfType<AudioManager>().Play("Fire_Ball");
+        
+                
         
         }
 
