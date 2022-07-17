@@ -9,7 +9,7 @@ public class playerMovement : MonoBehaviour
     private Rigidbody2D rb;
     GameObject dicetext;
     GameObject player;
-
+    private SpriteRenderer sr;
     public float animSpeed = 1;
     public float animStop = 0;
 
@@ -20,6 +20,7 @@ public class playerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         dicetext = GameObject.Find("DiceText");
+        sr = GetComponent<SpriteRenderer>();
         player = GameObject.Find("PlayerCharacter");
     }
 
@@ -27,6 +28,13 @@ public class playerMovement : MonoBehaviour
     void Update()
     {
         animator.SetFloat("Speed", animStop);
+                
+        if(Input.GetAxisRaw("Horizontal") > 0){
+            sr.flipX = false;
+        }
+        else if(Input.GetAxisRaw("Horizontal") < 0){
+            sr.flipX = true;
+        }
 
         if (Input.GetKey(KeyCode.A)) {
             rb.AddForce(Vector2.left * speed);
