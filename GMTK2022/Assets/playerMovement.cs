@@ -10,6 +10,11 @@ public class playerMovement : MonoBehaviour
     GameObject dicetext;
     GameObject player;
 
+    public float animSpeed = 1;
+    public float animStop = 0;
+
+    public Animator animator; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,14 +26,28 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.A))
+        animator.SetFloat("Speed", animStop);
+
+        if (Input.GetKey(KeyCode.A)) {
             rb.AddForce(Vector2.left * speed);
-        if (Input.GetKey(KeyCode.D))
+            animator.SetFloat("Speed", animSpeed);
+        }
+            
+        if (Input.GetKey(KeyCode.D)){
             rb.AddForce(Vector2.right * speed);
-        if (Input.GetKey(KeyCode.W))
-            rb.AddForce(Vector2.up * speed);
-        if (Input.GetKey(KeyCode.S))
-            rb.AddForce(Vector2.down * speed);
+            animator.SetFloat("Speed", animSpeed);
+
+        }
+        if (Input.GetKey(KeyCode.W)) {
+             rb.AddForce(Vector2.up * speed);
+             animator.SetFloat("Speed", animSpeed);
+        }
+           
+        if (Input.GetKey(KeyCode.S)){
+             rb.AddForce(Vector2.down * speed);
+             animator.SetFloat("Speed", animSpeed);
+        }
+           
 
         //Debug.Log(Input.mousePosition);
         
