@@ -469,9 +469,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   background: {fileID: 0}
+  currentLevel: 1
   isPaused: 0
   dice: {fileID: 1200893336}
   diceText: {fileID: 1317687783}
+  enemySpawnBox: {fileID: 651926015015909719}
   isRolling: 0
 --- !u!1 &1746312718
 GameObject:
@@ -772,6 +774,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3721b6d9e60dace4fb79563af7fd464c, type: 3}
+--- !u!1 &651926015015909719 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 651926015872158911, guid: 3721b6d9e60dace4fb79563af7fd464c, type: 3}
+  m_PrefabInstance: {fileID: 651926015015909718}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &713521002512353917
 PrefabInstance:
   m_ObjectHideFlags: 0

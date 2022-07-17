@@ -6,6 +6,7 @@ public class spawnController : MonoBehaviour
 {
     public GameObject[] enemies;
     public static float spawnTime = 5f;
+    public float currentSpawnTime = spawnTime;
     private float currentTime = spawnTime;
     private float width;
     private float height;
@@ -60,7 +61,7 @@ public class spawnController : MonoBehaviour
         else if (isSpawning){
             Instantiate(enemies[0], spawnPoint, Quaternion.Euler(new Vector2(0,0)));
             //Debug.Log(spawnPoint);
-            currentTime = spawnTime;
+            currentTime = currentSpawnTime;
         }
     }
     public void startSpawning(){

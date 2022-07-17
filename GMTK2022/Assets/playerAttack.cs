@@ -7,7 +7,7 @@ public class playerAttack : MonoBehaviour
 {
     Vector2 aimDirection;
     public float speed = 0.1f;
-    public float attackDelay = 0.5f;
+    public float attackDelay = 0.3f;
     private float nextDamageEvent = 0.0f;
     public GameObject projectile;
     private Rigidbody2D projectileInstance;
