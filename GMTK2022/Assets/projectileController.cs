@@ -26,11 +26,12 @@ public class projectileController : MonoBehaviour
             other.gameObject.GetComponent<enemyController>().health--;
             other.gameObject.GetComponent<simpleFlash>().Flash();
             //Debug.Log(other.gameObject.GetComponent<enemyController>().health);
-            Destroy(gameObject);
+            
         }
         else
         {
             //Debug.Log("NOT ENEMY");
         }
+        Destroy(gameObject);
     }
 }
