@@ -7,11 +7,15 @@ public class playerMovement : MonoBehaviour
     public float speed = 1;
     public float friction = 0.1f;
     private Rigidbody2D rb;
+    GameObject dicetext;
+    GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();    
+        rb = GetComponent<Rigidbody2D>();
+        dicetext = GameObject.Find("DiceText");
+        player = GameObject.Find("PlayerCharacter");
     }
 
     // Update is called once per frame
@@ -56,34 +60,36 @@ public class playerMovement : MonoBehaviour
 
     void speedBoost(){
         speed = speed * 2;
+        dicetext.GetComponent<ChangeDiceText>().changeText("YOU GOT SPEED BOOST",true);
         Debug.Log("speed is " + speed);
     }
 
     void speedSlow(){
         speed = speed / 2;
+        dicetext.GetComponent<ChangeDiceText>().changeText("OH NO! SLOWED!",false);
         Debug.Log("speed is " + speed);
     }
 
     void projectileSpeedBoost(){
-        GameObject player = GameObject.Find("PlayerCharacter");
+        dicetext.GetComponent<ChangeDiceText>().changeText("FASTER BULLETS!",true);
         player.GetComponent<playerAttack>().speed = player.GetComponent<playerAttack>().speed * 2;
         Debug.Log("Attackspeed is now " + player.GetComponent<playerAttack>().speed);
     }
 
     void projectileSpeedSlow(){
-        GameObject player = GameObject.Find("PlayerCharacter");
+        dicetext.GetComponent<ChangeDiceText>().changeText("SLOWER BULLETS!",false);
         player.GetComponent<playerAttack>().speed = player.GetComponent<playerAttack>().speed / 2;
         Debug.Log("Attackspeed is now " + player.GetComponent<playerAttack>().speed);
     }
 
     void attackSpeedBoost(){
-        GameObject player = GameObject.Find("PlayerCharacter");
+        dicetext.GetComponent<ChangeDiceText>().changeText("ATTACKSPEED BOOST!",true);
         player.GetComponent<playerAttack>().attackDelay = player.GetComponent<playerAttack>().attackDelay / 2;
         Debug.Log("Attackspeed is now " + player.GetComponent<playerAttack>().attackDelay);
     }
 
     void attackSpeedSlow(){
-        GameObject player = GameObject.Find("PlayerCharacter");
+        dicetext.GetComponent<ChangeDiceText>().changeText("ATTACKSPEED SLOW!",false);
         player.GetComponent<playerAttack>().attackDelay = player.GetComponent<playerAttack>().attackDelay * 2;
         Debug.Log("Attackspeed is now " + player.GetComponent<playerAttack>().attackDelay);
     }
