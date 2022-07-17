@@ -25,6 +25,7 @@ public class Dice : MonoBehaviour {
     private void OnMouseDown()
     {
             StartCoroutine("RollTheDice");
+        GetComponent<PlaySoundOnStart>().playSound();
     }
 
     // Coroutine that rolls the dice

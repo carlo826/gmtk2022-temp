@@ -36,10 +36,10 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-     void Start()
-    {
-        Play("ambience");
-    }
+     //void Start()
+    //{
+    //    Play("ambience");
+   // }
 
 
     // Update is called once per frame

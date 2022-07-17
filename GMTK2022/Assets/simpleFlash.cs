@@ -29,7 +29,7 @@ using UnityEngine;
         #endregion
 
         #endregion
-
+        
 
         #region Methods
 
@@ -60,7 +60,8 @@ using UnityEngine;
 
             // Start the Coroutine, and store the reference for it.
             flashRoutine = StartCoroutine(FlashRoutine());
-        }
+            GetComponent<PlaySoundOnStart>().playSound();
+    }
 
         private IEnumerator FlashRoutine()
         {
