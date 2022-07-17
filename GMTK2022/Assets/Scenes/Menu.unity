@@ -1696,10 +1696,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2605870422324117338, guid: 00dceac7a80a9f441aa17f7fec682fa6, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 22277655b38c2b648bc9e71390cdf03e, type: 2}
     - target: {fileID: 3089354626175132001, guid: 00dceac7a80a9f441aa17f7fec682fa6, type: 3}
       propertyPath: m_Name
       value: MenuMusic
       objectReference: {fileID: 0}
+    - target: {fileID: 3942676585754206530, guid: 00dceac7a80a9f441aa17f7fec682fa6, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 22277655b38c2b648bc9e71390cdf03e, type: 2}
+    - target: {fileID: 5019568002638416064, guid: 00dceac7a80a9f441aa17f7fec682fa6, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 22277655b38c2b648bc9e71390cdf03e, type: 2}
     - target: {fileID: 6055914036134761081, guid: 00dceac7a80a9f441aa17f7fec682fa6, type: 3}
       propertyPath: m_RootOrder
       value: 3

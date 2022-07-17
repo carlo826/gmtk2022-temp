@@ -1161,6 +1161,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2198016671620450110, guid: 1c5dda3337e50aa419a0a6779c5a2438, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 22277655b38c2b648bc9e71390cdf03e, type: 2}
     - target: {fileID: 4744034572261502692, guid: 1c5dda3337e50aa419a0a6779c5a2438, type: 3}
       propertyPath: m_Name
       value: DeathMusic
