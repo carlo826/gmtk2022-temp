@@ -7,10 +7,11 @@ public class levelController : MonoBehaviour
     private static float levelTime = 13f;
     private float currentTime = levelTime;
     public GameObject background;
-    private int currentLevel = 1;
+    public int currentLevel = 1;
     public bool isPaused = false;
     public GameObject dice;
     public GameObject diceText;
+    public GameObject enemySpawnBox;
     public bool isRolling = false;
 
     // Start is called before the first frame update
@@ -25,7 +26,7 @@ public class levelController : MonoBehaviour
             currentTime -= Time.deltaTime;
         }
         if (currentTime <= 0 && isPaused == false){
-            GameObject.Find("EnemySpawnBox").GetComponent<spawnController>().pauseSpawning();
+            enemySpawnBox.GetComponent<spawnController>().pauseSpawning();
             Debug.Log("KILL LAST ENEMIES");
         }
         if (GameObject.Find("Enemy(Clone)") == null && currentTime <= 0 && isPaused == false){
@@ -40,8 +41,6 @@ public class levelController : MonoBehaviour
         //GameObject.Find("PlayerCharacter").GetComponent<SpriteRenderer>().enabled = false;
         dice.SetActive(true);
         diceText.GetComponent<MeshRenderer>().enabled = true;
-
-
     }
 
     public IEnumerator diceRolled(){
@@ -52,7 +51,8 @@ public class levelController : MonoBehaviour
 
         currentLevel ++;
         currentTime = levelTime;
-        GameObject.Find("EnemySpawnBox").GetComponent<spawnController>().startSpawning();
+        enemySpawnBox.GetComponent<spawnController>().currentSpawnTime = enemySpawnBox.GetComponent<spawnController>().currentSpawnTime * 0.7f;
+        enemySpawnBox.GetComponent<spawnController>().startSpawning();
 
         isPaused = false;
     }

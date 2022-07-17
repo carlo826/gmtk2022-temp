@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &302857992 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 651926015872158911, guid: 3721b6d9e60dace4fb79563af7fd464c, type: 3}
+  m_PrefabInstance: {fileID: 651926015015909718}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &614753964
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -548,7 +553,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream
   m_RootOrder: 3
+=======
+  m_RootOrder: 8
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1456537193
 MonoBehaviour:
@@ -597,9 +606,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c683ce0ceec9e4642b1aaf08182bca87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   speed: 200
   attackDelay: 0.85
   projectile: {fileID: 6860885566104145948, guid: e9cdfab5ca04701429b049687c6f17e8, type: 3}
+=======
+  background: {fileID: 0}
+  currentLevel: 1
+  isPaused: 0
+  dice: {fileID: 1200893336}
+  diceText: {fileID: 1317687783}
+  enemySpawnBox: {fileID: 302857992}
+  isRolling: 0
+>>>>>>> Stashed changes
 --- !u!1 &1746312718
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,9 +972,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 1142949553165221831, guid: 4d69944f1da2dd949804c6191cf32773, type: 3}
       propertyPath: m_TagString
       value: Dice
       objectReference: {fileID: 0}
+=======
+>>>>>>> Stashed changes
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d69944f1da2dd949804c6191cf32773, type: 3}

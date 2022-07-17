@@ -5,7 +5,8 @@ using UnityEngine;
 public class spawnController : MonoBehaviour
 {
     public GameObject[] enemies;
-    public static float spawnTime = 5f;
+    public static float spawnTime = 2f;
+    public float currentSpawnTime = spawnTime;
     private float currentTime = spawnTime;
     private float width;
     private float height;
