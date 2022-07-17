@@ -24,6 +24,7 @@ public class projectileController : MonoBehaviour
 
         if(other.gameObject.CompareTag("Enemy")){
             other.gameObject.GetComponent<enemyController>().health--;
+            other.gameObject.GetComponent<simpleFlash>().Flash();
             //Debug.Log(other.gameObject.GetComponent<enemyController>().health);
             Destroy(gameObject);
         }
