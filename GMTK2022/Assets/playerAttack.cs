@@ -2,7 +2,17 @@
     using System.Collections.Generic;
     using UnityEngine;
 
-    public class playerAttack : MonoBehaviour
+public class playerAttack : MonoBehaviour
+{
+    Vector2 aimDirection;
+    public float speed = 0.1f;
+    public float attackDelay = 0.5f;
+    private float nextDamageEvent = 0.0f;
+    public GameObject projectile;
+    private Rigidbody2D projectileInstance;
+    public GameObject AudioManager; 
+    // Start is called before the first frame update
+    void Start()
     {
         Vector2 aimDirection;
         public float speed = 0.1f;
@@ -30,6 +40,9 @@
                 nextDamageEvent = Time.time + attackDelay;
                 projectileInstance = Instantiate(projectile, transform.position, Quaternion.FromToRotation(aimDirection, transform.position)).GetComponent<Rigidbody2D>();
 
+            //AudioManager.GetComponent<AudioManager>().Play("fireShoot");
+                
+
                 Vector2 direction = new Vector2(aimDirection.x, aimDirection.y);
                 direction.Normalize();
                 projectileInstance.AddForce(direction*speed);
@@ -55,6 +68,8 @@
         
         float AngleBetweenTwoPoints(Vector3 a, Vector3 b) {
                 return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
+                FindObjectOfType<AudioManager>().Play("fireSwosh");
+        
         }
     }
 
