@@ -5,7 +5,7 @@ using UnityEngine;
 public class spawnController : MonoBehaviour
 {
     public GameObject[] enemies;
-    public static float spawnTime = 10f;
+    public static float spawnTime = 5f;
     private float currentTime = spawnTime;
     private float width;
     private float height;
@@ -13,10 +13,12 @@ public class spawnController : MonoBehaviour
     private float spawnY;
     private Vector2 spawnPoint;
     private BoxCollider2D col;
+    private bool isSpawning = true;
 
     // Start is called before the first frame update
     void Start()
     {
+        isSpawning = true;
         col = GetComponent<BoxCollider2D>();
         width = col.bounds.max.x;
         height = gameObject.transform.localScale.y;
@@ -55,10 +57,18 @@ public class spawnController : MonoBehaviour
         if (currentTime > 0){
             currentTime -= Time.deltaTime;
         }
-        else{
+        else if (isSpawning){
             Instantiate(enemies[0], spawnPoint, Quaternion.Euler(new Vector2(0,0)));
             //Debug.Log(spawnPoint);
             currentTime = spawnTime;
         }
+    }
+    public void startSpawning(){
+        Debug.Log("Starting spawning");
+        isSpawning = true;
+    }
+    public void pauseSpawning(){
+        Debug.Log("Pausing spawning");
+        isSpawning = false;
     }
 }

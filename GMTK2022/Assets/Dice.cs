@@ -2,6 +2,7 @@
 using UnityEngine;
 
 public class Dice : MonoBehaviour {
+    private GameObject levelManager;
 
     // Array of dice sides sprites to load from Resources folder
     private Sprite[] diceSides;
@@ -13,6 +14,7 @@ public class Dice : MonoBehaviour {
 
 	// Use this for initialization
 	private void Start () {
+        levelManager = GameObject.Find("LevelManager");
 
         // Assign Renderer component
         rend = GetComponent<SpriteRenderer>();
@@ -30,6 +32,7 @@ public class Dice : MonoBehaviour {
     // Coroutine that rolls the dice
     private IEnumerator RollTheDice()
     {
+        StartCoroutine(levelManager.GetComponent<levelController>().diceRolled());
         // Variable to contain random dice side number.
         // It needs to be assigned. Let it be 0 initially
         int randomDiceSide = 0;
